@@ -1,7 +1,9 @@
 package com.MillitaryInventoryManagement.MillitaryInventoryManagement.Controllers;
+import com.MillitaryInventoryManagement.MillitaryInventoryManagement.Models.BaseUserCumModel;
 import com.MillitaryInventoryManagement.MillitaryInventoryManagement.Models.LoginModel;
 import com.MillitaryInventoryManagement.MillitaryInventoryManagement.Models.UserModel;
 import com.MillitaryInventoryManagement.MillitaryInventoryManagement.Services.AuthServices;
+import com.fasterxml.jackson.databind.JsonSerializable.Base;
 
 import java.util.Optional;
 
@@ -21,7 +23,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody LoginModel loginuser){
-        Optional<UserModel> user=authservice.loginuser(loginuser.getId(), loginuser.getPassword());
+        Optional<BaseUserCumModel> user=authservice.loginuser(loginuser.getId(), loginuser.getPassword());
         if(user.isPresent()){
             return ResponseEntity.ok(user.get());
         }else{

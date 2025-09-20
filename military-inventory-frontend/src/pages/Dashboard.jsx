@@ -35,7 +35,7 @@ export default function Dashboard() {
   const netHint = useMemo(() => 'Purchases + Transfer In - Transfer Out', []);
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="space-y-6">
         <FilterBar onChange={(f) => setFilters((s) => ({ ...s, ...f }))} />
 

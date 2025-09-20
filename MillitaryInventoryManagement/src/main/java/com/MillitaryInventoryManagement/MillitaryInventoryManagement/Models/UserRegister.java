@@ -1,12 +1,12 @@
 package com.MillitaryInventoryManagement.MillitaryInventoryManagement.Models;
-import jakarta.persistence.*;
 import lombok.*;
+import jakarta.persistence.*;;
+@Table(name = "users")
 @Entity
-@Table(name="users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserModel {
+public class UserRegister {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,8 +14,5 @@ public class UserModel {
     private String batch_number;
     private String password;
     private String role;
-    @ManyToOne
-    @JoinColumn(name = "base_id", referencedColumnName = "baseid")
-    private BaseModel base;
-    
+    private Long base_id;
 }

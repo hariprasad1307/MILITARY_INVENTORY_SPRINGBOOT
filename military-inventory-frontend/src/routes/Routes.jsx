@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
   {
     element: <Shell />,
     children: [
-      { path: '/dashboard', element: <Protected><Dashboard /></Protected> },
+      { path: '/dashboard', element: <Protected allow={['ADMIN','LOGISTICS','COMMANDER']}><Dashboard /></Protected> },
       { path: '/purchases', element: <Protected allow={['ADMIN','LOGISTICS']}><Purchases /></Protected> },
       { path: '/transfers', element: <Protected allow={['ADMIN','LOGISTICS','COMMANDER']}><Transfers /></Protected> },
       { path: '/assignments', element: <Protected allow={['ADMIN','COMMANDER']}><Assignments /></Protected> }

@@ -36,9 +36,10 @@ export default function Register() {
         <input className="w-full bg-camo-700/60 backdrop-blur-md px-3 py-2 rounded-xl placeholder-gray-400 text-white focus:ring-2 focus:ring-green-400" placeholder="Batch Number" value={form.batch_number} onChange={e=>setForm({...form,batch_number:e.target.value})}/>
         <input className="w-full bg-camo-700/60 backdrop-blur-md px-3 py-2 rounded-xl placeholder-gray-400 text-white focus:ring-2 focus:ring-green-400" placeholder="Password" type="password" value={form.password} onChange={e=>setForm({...form,password:e.target.value})}/>
         <select className="w-full bg-camo-700/60 backdrop-blur-md px-3 py-2 rounded-xl placeholder-gray-400 text-white focus:ring-2 focus:ring-green-400" value={form.role} onChange={e=>setForm({...form,role:e.target.value})}>
-          <option value="ADMIN">Admin</option>
+          
           <option value="COMMANDER">Base Commander</option>
           <option value="LOGISTICS">Logistics Officer</option>
+          <option value="TROOP">Troop</option>
         </select>
         <motion.button whileTap={{ scale: 0.95 }} className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold py-2 rounded-xl shadow-lg">Create Account</motion.button>
       </motion.form>
